@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { PrismaClient } from '@prisma/client';  
 
 const prisma = new PrismaClient();
@@ -9,6 +10,7 @@ const port = 3000;
 // Middlewares são funções que são executadas antes da rotas
 // O express.json() é um middleware que permite que a aplicação entenda requisições no formato JSON
 app.use(express.json());
+app.use(cors());
 
 app.post('/usuarios', async (req, res) => {
  
